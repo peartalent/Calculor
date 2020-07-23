@@ -1,6 +1,8 @@
 package com.dinhtai.calculor
 
+import android.graphics.Point
 import android.os.Bundle
+import android.view.Display
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,6 +22,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         assignViews(listOf(btn_0, btn_1, btn_2, btn_3,btn_4, btn_5,
                 btn_6, btn_7, btn_8, btn_9, btn_dot, btn_BS, btn_C, btn_CE,
                 btn_div, btn_add, btn_mul, btn_equal, btn_rev, btn_sub))
+        var display = getWindowManager().getDefaultDisplay();
+        var size = Point();
+        display.getSize(size);
+        txt_result.maxWidth = size.x
         initInitialization()
     }
 
@@ -97,12 +103,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             txt_result.text = op1.toString()
 
         } else {
-            var sign: Int = if (op1 < 0) -1 else 1
+            var sign: Int = if (op2 < 0) -1 else 1
             op2 = op2 * 10 + sign * digit
             txt_result.text = op2.toString()
         }
     }
-    //
+    //gán phép toán và chuyển sang trạng thái khác
     private fun selectOperand (operand : Int){
         stt =2
         op0 = operand
