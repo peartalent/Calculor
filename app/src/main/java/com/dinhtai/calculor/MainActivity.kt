@@ -2,7 +2,6 @@ package com.dinhtai.calculor
 
 import android.graphics.Point
 import android.os.Bundle
-import android.view.Display
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,7 +25,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         var size = Point();
         display.getSize(size);
         txt_result.maxWidth = size.x
+        txt_stt.text = "Nhập số 1"
         initInitialization()
+
     }
 
     //Extenstion set hết view
@@ -110,7 +111,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
     //gán phép toán và chuyển sang trạng thái khác
     private fun selectOperand (operand : Int){
+
         stt =2
+        txt_stt.text = "Nhập số "+stt
         op0 = operand
     }
     // đổi dấu
