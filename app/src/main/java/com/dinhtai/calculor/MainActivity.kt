@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         op2 = 0
         op1 =0
         op0 = 0
+        txt_stt.text = "Nhập số 1"
         txt_result.text = op1.toString()
     }
 
@@ -108,13 +109,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             op2 = op2 * 10 + sign * digit
             txt_result.text = op2.toString()
         }
+
     }
     //gán phép toán và chuyển sang trạng thái khác
     private fun selectOperand (operand : Int){
-
         stt =2
         txt_stt.text = "Nhập số "+stt
         op0 = operand
+        when(op0){
+            ADD_OPERAND -> txt_op.text = "Phép tính : +   "
+            SUB_OPERAND -> txt_op.text = "Phép tính : -   "
+            MUL_OPERAND -> txt_op.text = "Phép tính : X   "
+            DIV_OPERAND -> txt_op.text = "Phép tính : /   "
+        }
     }
     // đổi dấu
     private fun reverse(){
@@ -172,5 +179,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         op1 =0
         op0 = 0
         op2 =0
+        txt_stt.text = "Nhập số 1"
     }
 }
