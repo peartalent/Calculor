@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         assignViews(listOf(btn_0, btn_1, btn_2, btn_3,btn_4, btn_5,
-                btn_6, btn_7, btn_8, btn_9, btn_dot, btn_BS, btn_C, btn_CE,
-                btn_div, btn_add, btn_mul, btn_equal, btn_rev, btn_sub))
+            btn_6, btn_7, btn_8, btn_9, btn_dot, btn_BS, btn_C, btn_CE,
+            btn_div, btn_add, btn_mul, btn_equal, btn_rev, btn_sub))
         var display = getWindowManager().getDefaultDisplay();
         var size = Point();
         display.getSize(size);
@@ -29,21 +29,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         initInitialization()
 
     }
-
     //Extenstion set hết view
     fun View.OnClickListener.assignViews(views: List<View?>) {
         views?.forEach { it?.setOnClickListener(this) }
     }
-//    fun View.OnClickListener.assignViews(vararg views: View?) {
-//        views.forEach { it?.setOnClickListener(this) }
-//    }
-
-//    private fun initListeners() {
-//        listOf(btn_0,btn_1).forEach { view ->
-//            view?.setOnClickListener(this)
-//        }
-//    }
-
     private fun initInitialization() {
         stt = 1;
         op2 = 0
@@ -97,7 +86,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
     }
- // thêm số hạng vào
+    // thêm số hạng vào
     private fun addDigit(digit: Int) {
         if (stt == 1) {
             var sign: Int = if (op1 < 0) -1 else 1
@@ -143,7 +132,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             txt_result.text = op2.toString()
         }
     }
-
     // xoa cả
     private fun clearALl(){
         initInitialization()
