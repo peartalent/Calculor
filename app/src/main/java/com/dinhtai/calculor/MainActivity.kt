@@ -143,7 +143,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             txt_result.text = op2.toString()
         }
     }
-
     // xoa cả
     private fun clearALl(){
         initInitialization()
